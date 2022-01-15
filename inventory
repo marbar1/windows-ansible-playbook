@@ -1,0 +1,7 @@
+[windows]
+<ipaddress>
+
+[windows:vars]
+ansible_user=<windows_username>
+ansible_connection=ssh
+ansible_shell_type=powershell

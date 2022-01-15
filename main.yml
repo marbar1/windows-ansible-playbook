@@ -1,0 +1,20 @@
+---
+- hosts: windows
+  tasks:
+#    - name: Register the output of the 'choco --version' command.
+#      win_command: choco --version
+#      register: choco_version
+#
+#    - name: Print the registered output fo the 'choco --version' command.
+#      debug:
+#        var: choco_version.stdout
+
+#    - name: Ensure Chocolatey is installed.
+#      win_chocolatey:
+#        name: chocolatey
+#        state: present
+
+    - name: Ensure Notepad++ is installed.
+      win_chocolatey:
+        name: notepadplusplus
+        state: present
