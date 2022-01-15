@@ -4,7 +4,7 @@ This playbook installs and configures most of the software I use on my personal 
 
 ## Setup on the Windows machine
 
-Setup an OpenSSH server with PowerShell as default shell on the Windows machine by following these steps or execute the script openssh_setup.ps1 for convinience.
+Setup an OpenSSH server with PowerShell as default shell on the Windows machine by following these steps or execute the script [openssh_setup.ps1](openssh_setup.ps1) for convinience. Further information on the official [Microsoft docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
 
 1. Install the OpenSSH-Server through Windows optional apps and features or with the following command:
     ```powershell
