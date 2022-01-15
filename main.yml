@@ -1,20 +1,40 @@
 ---
-- hosts: windows
+- name: Install and configure software.
+  hosts: windows
+
   tasks:
-#    - name: Register the output of the 'choco --version' command.
-#      win_command: choco --version
-#      register: choco_version
-#
-#    - name: Print the registered output fo the 'choco --version' command.
-#      debug:
-#        var: choco_version.stdout
-
-#    - name: Ensure Chocolatey is installed.
-#      win_chocolatey:
-#        name: chocolatey
-#        state: present
-
-    - name: Ensure Notepad++ is installed.
+    - name: Ensure Chocolatey is installed.
       win_chocolatey:
-        name: notepadplusplus
+        name: chocolatey
+        state: present
+      register:
+        chocolatey_install
+
+    - name: Restart Windows if Chocolatey was not already installed.
+      win_reboot:
+      when: chocolatey_install.changed
+
+    - name: Make sure the following Chocolatey packages are installed.
+      win_chocolatey:
+        name:
+          - 1password
+          - 7zip
+          - adobereader
+          - gimp
+          - git
+          - googlechrome
+          - googledrive
+          - greenshot
+          - inkscape
+          - kicad
+          - logitechgaming
+          - nextcloud-client
+          - obs-studio.install
+          - obs-virtualcam
+          - octave.install
+          - steam-client
+          - streamdeck
+          - teamviewer
+          - vlc
+          - vscode
         state: present
