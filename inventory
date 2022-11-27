@@ -1,7 +1,7 @@
 [windows]
-<ipaddress>
+192.168.0.33
 
 [windows:vars]
-ansible_user=<windows_username>
+ansible_user=mbaer
 ansible_connection=ssh
 ansible_shell_type=powershell

@@ -16,25 +16,26 @@
 
     - name: Make sure the following Chocolatey packages are installed.
       win_chocolatey:
-        name:
-          - 1password
-          - 7zip
-          - adobereader
-          - gimp
-          - git
-          - googlechrome
-          - googledrive
-          - greenshot
-          - inkscape
-          - kicad
-          - logitechgaming
-          - nextcloud-client
-          - obs-studio.install
-          - obs-virtualcam
-          - octave.install
-          - steam-client
-          - streamdeck
-          - teamviewer
-          - vlc
-          - vscode
+        name: '{{ item }}'
         state: present
+      loop:
+        - 1password
+        - 7zip
+        - adobereader
+        - gimp
+        - git
+        - googlechrome
+        - googledrive
+        - greenshot
+        - inkscape
+        - kicad
+        - logitechgaming
+        - nextcloud-client
+        - obs-studio.install
+        - obs-virtualcam
+        - octave.install
+        - steam-client
+        - streamdeck
+        - teamviewer
+        - vlc
+        - vscode
